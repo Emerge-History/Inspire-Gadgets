@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Thermal Camera</title>
+
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-weight: 300;
+			background: #ece4d9;
+			/*background-image:url(data:image/png;base64,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);*/
+			font-family: 'Arial Rounded MT Bold', 'Helvetica Neue', Helvetica, sans-serif;
+		}
+		
+		.zigzag {
+			text-align: center;
+			font-size: 20px;
+			line-height: 40px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+		}
+		
+		.zigzag:after {
+			content: " ";
+			display: block;
+			position: relative;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 70px;
+			background: linear-gradient(#FFFFFF 0%, transparent 0%), linear-gradient(135deg, #333 33.33%, transparent 33.33%) 0 0%, #333 linear-gradient(45deg, #333 33.33%, #FFFFFF 33.33%) 0 0%;
+			background: -webkit-linear-gradient(#FFFFFF 0%, transparent 0%), -webkit-linear-gradient(135deg, #333 33.33%, transparent 33.33%) 0 0%, #333 -webkit-linear-gradient(45deg, #333 33.33%, #FFFFFF 33.33%) 0 0%;
+			background: -o-linear-gradient(#FFFFFF 0%, transparent 0%), -o-linear-gradient(135deg, #333 33.33%, transparent 33.33%) 0 0%, #333 -o-linear-gradient(45deg, #333 33.33%, #FFFFFF 33.33%) 0 0%;
+			background: -moz-linear-gradient(#FFFFFF 0%, transparent 0%), -moz-linear-gradient(135deg, #333 33.33%, transparent 33.33%) 0 0%, #333 -moz-linear-gradient(45deg, #333 33.33%, #FFFFFF 33.33%) 0 0%;
+			background-repeat: repeat-x;
+			background-size: 0px 100%, 9px 27px, 9px 27px;
+		}
+		
+		.header {
+			text-align: center;
+			font-size: 22px;
+			padding: 15px 10px 0px 10px;
+		}
+		
+		.container {
+			position: absolute;
+			top: 90px;
+			left: 30px;
+			right: 30px;
+			bottom: 30px;
+			border-radius: 10px;
+			overflow: hidden;
+			box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+		}
+		
+		.main {
+			position: absolute;
+			bottom: 30px;
+			left: 0;
+			right: 0;
+			top: 0px;
+			width: 100%;
+			background: #FFFFFF;
+		}
+		
+		h1 {
+			position: absolute;
+			top: -5px;
+			left: 0;
+			right: 0;
+			font-size: 40px;
+			font-family: bold 100px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;
+			text-align: center;
+			color: #f1ebe5;
+			text-shadow: 0 8px 9px #c4b59d, 0px -1px 1px #fff;
+		}
+		
+		h2 {
+			text-align: center;
+			font-weight: normal;
+			color: #ece4d9;
+			border-bottom: 1px dashed #ece4d9;
+			padding-bottom: 20px;
+		}
+		
+		#image {
+			display: block;
+			height: 100%;
+			width: 100%;
+		}
+		
+		#imgCanvas {
+			height: 170px;
+			width: 170px;
+			margin-left: auto;
+			margin-right: auto;
+			border-radius: 10px;
+			display: block;
+			border: 1px solid #eee;
+		}
+		
+		#rotateBtn {
+			position: absolute;
+			top: 80px;
+			right: 10px;
+			color: red;
+			display: block;
+			z-index: 999999;
+		}
+		
+		#go {
+			position: absolute;
+			color: #fff;
+			bottom: 0px;
+			line-height: 50px;
+			width: 100%;
+			text-align: center;
+			left: 0;
+			right: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div style="position:relative; height: 100%;">
+			<div class="main">
+				<h2 id="PhotoButton">take a photo</h2>
+
+				<div id='image'>
+					<canvas id="imgCanvas" height='384px' width='384px'></canvas>
+				</div>
+				<div style="width: 0; height: 0; overflow: hidden;">
+					<input id="PhotoPicker" type="file" accept="image/*">
+				</div>
+				<span id='rotateBtn'>⤵️</span>
+			</div>
+			<div class='zigzag'>
+			</div>
+			<div id="go">
+				Print!<span id="perc"></span>
+			</div>
+
+			<form id='myForm' method='POST' style="display:none;" action='/print' enctype='multipart/form-data'>
+				<!--<input type='file' name='print'>-->
+				<!--<input type='submit' value='Print'></form>-->
+			</form>
+		</div>
+	</div>
+	<h1>Insta Print</h1>
+
+
+	<script>
+		function brightness(pixels, i) {
+			var 		r = pixels.data[i];
+			var			g = pixels.data[i+1];
+			var			b = pixels.data[i+2];
+						
+			return (r) * 0.3 + (g) * 0.59 + (b) * 0.11;	
+		}
+		
+		function distributeError(pixels, x, y, how, err) {
+			if(x >= 384 || y >= 384 || x < 0 || y < 0) return;
+			var i = (y*384 + x)*4;
+			var b = brightness(pixels, i) + how * err;
+			pixels.data[i + 0] = b;
+			pixels.data[i + 1] = b;
+			pixels.data[i + 2] = b;
+		}
+		
+		function threshold(pixels, i) {
+			return brightness(pixels, i) > 128 ? 255 : 0;
+		}
+		
+		document.getElementById("PhotoButton").onclick = function() {
+			document.getElementById("PhotoPicker").click();
+		};
+		
+		var loaded = false;
+		
+		var arr, blob;
+		
+		function loadData(pixel) {
+			var col = (256 + 1 * 256);
+			arr = new Uint8Array(col * 48);
+			for(var y = 0; y < col; y++) {
+				for(var x = 0; x< 384; x+= 8) {
+					if(y > 384){
+						arr[48 * y + (x / 8)] = 0;
+						continue;
+					}
+					var bits = 0;
+					for(var b = 0; b < 8; b++){
+						if(pixel.data[(y * 384 + x + b) * 4] < 100) {
+							bits |= 1 << (7 - b);
+						}
+					}
+					arr[48 * y + (x / 8)] = bits;
+				}
+			}
+			blob = new Blob([arr]);
+		}
+		
+		document.getElementById("PhotoPicker").onchange = function(e) {
+			e.preventDefault();
+			var canvas = document.getElementById('imgCanvas');
+			var ctx = canvas.getContext('2d');
+		    if(this.files.length === 0) return;
+		    var imageFile = this.files[0];
+			var img = new Image();
+			var url = window.URL ? window.URL : window.webkitURL;
+			img.src = url.createObjectURL(imageFile);
+			img.onload = function(e) {
+				url.revokeObjectURL(this.src);
+				var h = img.naturalHeight;
+				var w = img.naturalWidth;
+				var s = h > w ? w : h;
+				var sy = (h - s) / 2;
+				var sx = (w - s) / 2;
+				var dh = 384;
+				var dw = 384;
+				var ds = dh > dw ? dw : dh;
+				var dy = (dh - ds) / 2;
+				var dx = (dw - ds) / 2;
+				ctx.drawImage(img, sx, sy, s, s, dx, dy, ds, ds);
+				var pixels = ctx.getImageData(0, 0, 384, 384);
+				for(var y = 0; y < 384; y++) {
+					for(var x = 0; x < 384; x++) {
+						i = (y*384 + x)*4;
+						var thres = threshold(pixels, i);
+						var quant_error = brightness(pixels, i) - thres;
+						
+						pixels.data[i] = thres;
+						pixels.data[i + 1] = thres;
+						pixels.data[i + 2] = thres;
+						pixels.data[i + 3] = 255;
+						
+						distributeError(pixels, x + 1, y, 7.0/16, quant_error);
+						distributeError(pixels, x - 1, y + 1, 3.0/16, quant_error);
+						distributeError(pixels, x, y + 1, 5.0/16, quant_error);
+						distributeError(pixels, x + 1, y + 1, 1.0/16, quant_error);
+					}
+				}
+				ctx.putImageData(pixels, 0, 0);
+				loadData(pixels);
+				loaded = true;
+			};
+		};
+		
+		document.getElementById("rotateBtn").onclick = function() {
+			if(!loaded) return;
+			
+			var canvas = document.getElementById('imgCanvas');
+			var ctx = canvas.getContext('2d');
+			var pixels = ctx.getImageData(0, 0, 384, 384);
+			
+			var tempCanvas = document.createElement("canvas");
+			tempCanvas.width = 384;
+			tempCanvas.height = 384;
+			var tctx = tempCanvas.getContext('2d');
+			tctx.putImageData(pixels, 0, 0);
+			ctx.save();
+			ctx.translate(384 / 2, 384 / 2); //let's translate
+			ctx.rotate(Math.PI / 2);
+			ctx.drawImage(tempCanvas, -384 / 2, -384 / 2);
+			ctx.restore();
+			loadData(ctx.getImageData(0, 0, 384, 384));
+		};
+		
+		document.getElementById("go").onclick = function(){
+			if(!loaded) return;
+			
+			document.getElementById("go").innerText = "Please Wait..";
+			document.getElementById("myForm").reset();
+			var fd = new FormData(document.getElementById("myForm"));
+			fd.append("print", blob);
+			var oReq = new XMLHttpRequest();
+			oReq.open("POST", "/print", true);
+			oReq.onload = function(oEvent) {
+				document.getElementById("go").innerText = "Print!";
+				if (oReq.status == 200) {
+					alert("Uploaded");
+				} else {
+					alert("Error " + oReq.status + " occurred when trying to upload your file.");
+				}
+			};
+		
+			oReq.send(fd);
+		};
+	</script>
+</body>
+
+</html>
